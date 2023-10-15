@@ -1,0 +1,116 @@
+body {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  background-color: #282c34;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+h1 {
+  color: #61AFEF;
+  margin-left: 10px;
+}
+
+.container {
+  flex: 1;
+  padding: 20px;
+  background-color: #1e2127;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+.editor-container {
+  max-width: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.editor-container form {
+  height: 100%;
+}
+
+.output-container {
+  max-width: 50%;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+#yourcode {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  background-color: #2a2e36;
+  color: #abb2bf;
+  border-radius: 5px;
+  resize: none;
+  height: calc(100% - 20px);
+  outline: none;
+  
+  font-size: 1rem;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #61AFEF;
+  color: #282c34;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  bottom: 40px;
+}
+
+button:hover {
+  background-color: #81bceb;
+}
+
+pre {
+  background-color: #1e2127;
+  padding: 10px;
+  border: 1px solid #444c56;
+  border-radius: 5px;
+  overflow: auto;
+  height: 60%;
+
+  scrollbar-width: thin;
+  scrollbar-color: #528bff #1e2127;
+}
+
+#mycanvas {
+  display: block;
+  height: calc(40% - 60px);
+  margin: 20px auto;
+  background-color: #1e2127;
+  border: 1px solid #444c56;
+  overflow: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: #528bff #1e2127;
+}
+
+pre code {
+  display: block;
+  background-color: #1e2127;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #1e2127;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #444c56;
+  border-radius: 10px;
+}
+
+#python-selector {
+  color: #a3cbeb;
+}
