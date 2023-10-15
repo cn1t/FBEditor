@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   highlightAllCode();
+
+  // If the user stops typing for 2s, highlight all code
+  let timeout = null;
+  const codeDiv = document.getElementById("yourcode");
+
+  codeDiv.addEventListener("input", (event) => {
+    clearTimeout(timeout);
+    
+    timeout = setTimeout(() => {
+      highlightAllCode();
+    }, 1000);
+  });
 });
 
 function highlightAllCode() {
