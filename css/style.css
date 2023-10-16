@@ -98,6 +98,10 @@ pre {
 pre code {
   display: block;
   background-color: #1e2127;
+  padding: 10px;
+  border: 1px solid #444c56;
+  border-radius: 5px;
+  color: #abb2bf;
 }
 
 *::-webkit-scrollbar {
