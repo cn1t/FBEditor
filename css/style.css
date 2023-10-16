@@ -48,8 +48,10 @@ h1 {
   resize: none;
   height: calc(100% - 20px);
   outline: none;
-  
+  overflow: auto;
   font-size: 1rem;
+
+  white-space: pre-wrap
 }
 
 button {

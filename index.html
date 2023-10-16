@@ -5,9 +5,10 @@
     <script src="http://skulpt.org/js/skulpt.min.js" type="text/javascript"></script>
     <script src="http://skulpt.org/js/skulpt-stdlib.js" type="text/javascript"></script>
 
+    <title>FB Editor</title>
+
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 
     <link rel="stylesheet" href="/css/style.css">
 
@@ -22,15 +23,16 @@
     <div class="container editor-container">
       <form>
         <!-- Use a div with contenteditable for syntax highlighting -->
-        <div id="yourcode" contenteditable="true" spellcheck="false">
-          import turtle<br>
-          <br>
-          t = turtle.Turtle()<br>
-          t.color("grey")<br>
-          t.forward(100)<br>
-          <br>
-          print("Hello World")
-        </div><br />
+        <div id="yourcode" contenteditable="true" spellcheck="false">import turtle
+
+colors = ['red', 'purple', 'blue', 'green', 'orange', 'yellow']
+t = turtle.Turtle()
+
+for x in range(360):
+    t.pencolor(colors[x%6])
+    t.width(x//100 + 1)
+    t.forward(x)
+    t.left(59)</div><br/>
         <button type="button" onclick="runit()">Run</button>
       </form>
     </div>

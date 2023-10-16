@@ -1,24 +1,24 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-  highlightAllCode();
+function onKeyDown(e) {
+  if (e.keyCode === 9) { // tab key
+      e.preventDefault();  // this will prevent us from tabbing out of the editor
 
-  // If the user stops typing for 2s, highlight all code
-  let timeout = null;
-  const codeDiv = document.getElementById("yourcode");
+      // now insert four non-breaking spaces for the tab key
+      var editor = document.getElementById("yourcode");
+      var doc = editor.ownerDocument.defaultView;
+      var sel = doc.getSelection();
+      var range = sel.getRangeAt(0);
 
-  codeDiv.addEventListener("input", (event) => {
-    clearTimeout(timeout);
-    
-    timeout = setTimeout(() => {
-      highlightAllCode();
-    }, 1000);
-  });
-});
+      var tabNode = document.createTextNode("\u0009");
+      range.insertNode(tabNode);
 
-function highlightAllCode() {
-  const codeDiv = document.getElementById("yourcode");
-
-  hljs.highlightBlock(codeDiv);
+      range.setStartAfter(tabNode);
+      range.setEndAfter(tabNode); 
+      sel.removeAllRanges();
+      sel.addRange(range);
+  }
 }
+
+document.addEventListener("keydown", onKeyDown);
 
 // Output functions are configurable. This one just appends some text to a pre element.
 function outf(text) {
